@@ -19,7 +19,6 @@ class _RegScreenState extends State<RegScreen> {
   File? id_front;
   File? id_back;
 
-
   Future<void> takePictureFront() async {
     String imagePath = join((await getApplicationSupportDirectory()).path,
         "${(DateTime.now().millisecondsSinceEpoch / 1000).round()}.jpeg");
