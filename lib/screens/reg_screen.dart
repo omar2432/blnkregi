@@ -5,6 +5,7 @@ import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import '../models/user.dart';
 import '../models/sheets.dart';
+import '../models/idupload.dart';
 
 class RegScreen extends StatefulWidget {
   const RegScreen({super.key});
@@ -72,17 +73,26 @@ class _RegScreenState extends State<RegScreen> {
     if(id_front!=null&&id_back!=null){
     if(isvalid){
     _form.currentState!.save();
-    _editedUser.idFront=id_front!.path;
-    _editedUser.idBack=id_back!.path;   
+    _editedUser.idFront="${_editedUser.mobile}_front.jpg";
+    _editedUser.idBack="${_editedUser.mobile}_back.jpg";   
 
     // Send the users data to the Google sheet
      Sheets.initSheets(_editedUser);
+
+     // Upload images 
+     Idupload.uploadpics(_editedUser.mobile!, id_front!,id_back!);
+     
+     
+     ScaffoldMessenger.of(this.context).showSnackBar(const SnackBar(
+      content: Text("Form Submited"),
+    ));
      
     
     }
     }else{
       ScaffoldMessenger.of(this.context).showSnackBar(const SnackBar(
       content: Text("You must take a picture of both the front and the back of the ID"),
+      backgroundColor: Colors.red,
     ));
     }
 

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "132312517629",
+    "project_id": "blnk-id-storage",
+    "storage_bucket": "blnk-id-storage.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:132312517629:android:3b58e0732b64114386e794",
+        "android_client_info": {
+          "package_name": "com.example.blnkregi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "132312517629-n276tck6jpctsftbmcbjeh8tunvcnal1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsQX2xl2Hh8f6TZ9xVoMtIeVQleN_iLmo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "132312517629-n276tck6jpctsftbmcbjeh8tunvcnal1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
