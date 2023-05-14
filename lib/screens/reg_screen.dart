@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import '../models/user.dart';
+import '../models/sheets.dart';
 
 class RegScreen extends StatefulWidget {
   const RegScreen({super.key});
@@ -73,6 +74,11 @@ class _RegScreenState extends State<RegScreen> {
     _form.currentState!.save();
     _editedUser.idFront=id_front!.path;
     _editedUser.idBack=id_back!.path;   
+
+    // Send the users data to the Google sheet
+     Sheets.initSheets(_editedUser);
+     
+    
     }
     }else{
       ScaffoldMessenger.of(this.context).showSnackBar(const SnackBar(
